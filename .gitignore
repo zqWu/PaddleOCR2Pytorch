@@ -147,3 +147,7 @@ det_models*
 rec_models*
 *副本*
 *测试数据*
+models/
+fusion_result.json
+tensor-demo.py
+tensor-demo2.py

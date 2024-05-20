@@ -1,3 +1,13 @@
+# npu版本的 ppocr
+- 源码: https://github.com/frotms/PaddleOCR2Pytorch
+- 相关代码
+```
+tools/infer/predict_det_npu.py 
+tools/infer/predict_rec_npu.py
+
+http_server/下所有代码
+```
+
 # [PaddleOCR2Pytorch](https://github.com/frotms/PaddleOCR2Pytorch)
 
 简体中文 | [English](README_en.md)

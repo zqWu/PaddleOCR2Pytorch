@@ -15,8 +15,7 @@ import tools.infer.pytorchocr_utility as utility
 from pytorchocr.utils.utility import get_image_file_list, check_and_read_gif
 from pytorchocr.data import create_operators, transform
 from pytorchocr.postprocess import build_post_process
-
-
+import torch_npu
 
 class TextDetector(BaseOCRV20):
     def __init__(self, args, **kwargs):
@@ -117,8 +116,7 @@ class TextDetector(BaseOCRV20):
         self.preprocess_op = create_operators(pre_process_list)
         self.postprocess_op = build_post_process(postprocess_params)
 
-        use_gpu = args.use_gpu
-        self.use_gpu = torch.cuda.is_available() and use_gpu
+
 
         self.weights_path = args.det_model_path
         self.yaml_path = args.det_yaml_path
@@ -126,8 +124,7 @@ class TextDetector(BaseOCRV20):
         super(TextDetector, self).__init__(network_config, **kwargs)
         self.load_pytorch_weights(self.weights_path)
         self.net.eval()
-        if self.use_gpu:
-            self.net.cuda()
+        self.net.npu()
 
     def order_points_clockwise(self, pts):
         """
@@ -192,27 +189,37 @@ class TextDetector(BaseOCRV20):
         img = np.expand_dims(img, axis=0)
         shape_list = np.expand_dims(shape_list, axis=0)
         img = img.copy()
-        starttime = time.time()
 
         with torch.no_grad():
             inp = torch.from_numpy(img)
-            if self.use_gpu:
-                inp = inp.cuda()
+            starttime = time.time()
+            inp = inp.npu()
+            print(f'cpu ==> npu:{time.time() - starttime}')
+
+            starttime = time.time()
             outputs = self.net(inp)
-        print(f'cpu耗时:{time.time()-starttime}')
+            print(f'npu计算耗时:{time.time() - starttime}')
 
         preds = {}
         if self.det_algorithm == "EAST":
+            print("A")
             preds['f_geo'] = outputs['f_geo'].cpu().numpy()
             preds['f_score'] = outputs['f_score'].cpu().numpy()
         elif self.det_algorithm == 'SAST':
+            print("B")
             preds['f_border'] = outputs['f_border'].cpu().numpy()
             preds['f_score'] = outputs['f_score'].cpu().numpy()
             preds['f_tco'] = outputs['f_tco'].cpu().numpy()
             preds['f_tvo'] = outputs['f_tvo'].cpu().numpy()
         elif self.det_algorithm in ['DB', 'PSE', 'DB++']:
-            preds['maps'] = outputs['maps'].cpu().numpy()
+            starttime = time.time()
+            # preds['maps'] = outputs['maps'].cpu().numpy()
+
+            preds['maps'] = outputs['maps'].to("cpu")
+            print(f"npu==>cpu耗时：{time.time() - starttime},shape:{preds['maps'].shape}")
+
         elif self.det_algorithm == 'FCE':
+            print("D")
             for i, (k, output) in enumerate(outputs.items()):
                 preds['level_{}'.format(i)] = output
         else:
