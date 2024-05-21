@@ -2,6 +2,9 @@ import os
 import sys
 
 __dir__ = os.path.dirname(os.path.abspath(__file__))
+
+from project_root import relative_path_in_root
+
 sys.path.append(__dir__)
 sys.path.append(os.path.abspath(os.path.join(__dir__, '../..')))
 import cv2
@@ -10,15 +13,15 @@ import tools.infer.pytorchocr_utility as utility
 from tools.infer.predict_det_npu import TextDetector
 
 
-def _init_det_args():
+def _init_args():
     args = utility.parse_args()
-    args.det_model_path = '../infer_models/ch_ptocr_v4_det_server_infer.pth'
-    args.det_yaml_path = '../configs/det/ch_PP-OCRv4/ch_PP-OCRv4_det_teacher.yml'
+    args.det_model_path = relative_path_in_root('infer_models/ch_ptocr_v4_det_server_infer.pth')
+    args.det_yaml_path = relative_path_in_root('configs/det/ch_PP-OCRv4/ch_PP-OCRv4_det_teacher.yml')
     return args
 
 
 def default_text_detector():
-    args = _init_det_args()
+    args = _init_args()
     text_detector = TextDetector(args)
     return text_detector
 

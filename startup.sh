@@ -10,3 +10,5 @@ export ASCEND_RT_VISIBLE_DEVICES=2,3
 
 uvicorn http_server.rest_api:app --host 0.0.0.0 --port 22008 --workers 1
 #uvicorn http_server.rest_api:app --host 0.0.0.0 --port 22008 --workers 1 > log 2>&1
+
+#PYTHONPATH=. python http_server/rest_api.py

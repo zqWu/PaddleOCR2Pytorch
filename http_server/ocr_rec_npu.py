@@ -3,6 +3,7 @@ import sys
 
 __dir__ = os.path.dirname(os.path.abspath(__file__))
 
+from project_root import relative_path_in_root
 from tools.infer.predict_rec_npu import TextRecognizer
 
 sys.path.append(__dir__)
@@ -11,15 +12,15 @@ import cv2
 import tools.infer.pytorchocr_utility as utility
 
 
-def _init_det_args():
+def _init_args():
     args = utility.parse_args()
-    args.rec_model_path = '../infer_models/ch_ptocr_v4_rec_server_infer.pth'
-    args.rec_yaml_path = '../configs/rec/PP-OCRv4/ch_PP-OCRv4_rec_hgnet.yml'
+    args.rec_model_path = relative_path_in_root('infer_models/ch_ptocr_v4_rec_server_infer.pth')
+    args.rec_yaml_path = relative_path_in_root('configs/rec/PP-OCRv4/ch_PP-OCRv4_rec_hgnet.yml')
     return args
 
 
 def default_text_recognizer():
-    args = _init_det_args()
+    args = _init_args()
     text_recognizer = TextRecognizer(args)
     return text_recognizer
 

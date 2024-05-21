@@ -132,8 +132,12 @@ def init_args():
     return parser
 
 def parse_args():
+    # parser = init_args()
+    # return parser.parse_args()
+
     parser = init_args()
-    return parser.parse_args()
+    args, unknown = parser.parse_known_args()
+    return args
 
 def get_default_config(args):
     return vars(args)
