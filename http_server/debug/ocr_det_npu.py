@@ -34,8 +34,8 @@ def text_detect(cv2_img):
 
 
 if __name__ == '__main__':
-    cv2_img = cv2.imread('../doc/imgs_2/3_2.png')
-    # cv2_img = cv2.imread('../doc/imgs_2/00009282.jpg')
+    img_file = relative_path_in_root('doc/imgs_2/3_2.png')
+    cv2_img = cv2.imread(img_file)
     dt_boxes, elapse = text_detect(cv2_img)
     print(f'dt_boxes={dt_boxes}')  # 4点组成的 四边形
     print(f'elapse={elapse}')

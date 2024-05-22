@@ -33,8 +33,9 @@ def text_recognize(cv2_img):
 
 
 if __name__ == '__main__':
-    cv2_img = cv2.imread('../doc/imgs_words/ch/word_1.jpg')
-    # cv2_img = cv2.imread('../doc/imgs_2/3_2.png') # 多行文本不能识别
+    img_file = relative_path_in_root('doc/imgs_words/ch/word_1.jpg')
+    cv2_img = cv2.imread(img_file)
+    # doc/imgs_2/3_2.png' # 多行文本不能被正确处理
     rec_res, predict_time = text_recognize([cv2_img])
     print(f'rec_res={rec_res}')  # rec_res=[('韩国小馆', 0.996515)]
     print(f'predict_time={predict_time}')

@@ -3,12 +3,11 @@ from typing import List
 
 import cv2
 
-import tools.infer.pytorchocr_utility as utility
+from http_server.debug.predict_system_copy import TextSystemCopy
 from http_server.logger import get_logger
 from http_server.ocr_api import OcrAPI, OcrResult, OcrRow
 from http_server.ocr_utils import get_cv2_image_w_h, add_white_border
 from project_root import relative_path_in_root
-from tools.infer.predict_system_npu import TextSystemNpu
 
 logger = get_logger(__name__)
 
@@ -18,13 +17,7 @@ class PpocrApi(OcrAPI):
 
     def __init__(self):
         super().__init__()
-        #
-        args = utility.parse_args()
-        args.det_model_path = relative_path_in_root('infer_models/ch_ptocr_v4_det_server_infer.pth')
-        args.det_yaml_path = relative_path_in_root('configs/det/ch_PP-OCRv4/ch_PP-OCRv4_det_teacher.yml')
-        args.rec_model_path = relative_path_in_root('infer_models/ch_ptocr_v4_rec_server_infer.pth')
-        args.rec_yaml_path = relative_path_in_root('configs/rec/PP-OCRv4/ch_PP-OCRv4_rec_hgnet.yml')
-        self.text_system = TextSystemNpu(args)
+        self.text_system = TextSystemCopy()
 
     def get_name(self) -> str:
         return self.__class__.__name__

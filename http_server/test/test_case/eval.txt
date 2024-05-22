@@ -1,0 +1,25 @@
+eval_0.png   杀量将达到2.5-2.7亿只、肉食加工能力达60万吨、熟食产能15万吨，公司\n产能将翻倍，相当于在诸城市再造一个“仙坛股份”，实现公司的二次腾飞。
+eval_1.png   杀量将达到2.5-2.7亿只、肉食加工能力达60万吨、熟食产能15万吨，公司\n产能将翻倍，相当于在诸城市再造一个“仙坛股份”，实现公司的二次腾飞。
+eval_2.png   21Q1业绩持续低迷，成本上升压缩利润空间。21Q1公司营业收入为6.01亿\n元，同比下降12.32%；净利润0.62亿元，同比下降61.71%，主要由于21Q1\n公司鸡肉产品销量明显下滑，21Q1鸡肉产品销售量为5.58万吨，同比下降\n18.8%，销售收入为5.24亿元，同比下降17.5%。并且2021年开始，玉米、\n豆粕等饲料原料成本价格不断上涨，导致鸡养殖企业成本上抬，利润受到挤压。
+eval_3.png   21Q1业绩持续低迷，成本上升压缩利润空间。21Q1公司营业收入为6.01亿\n元，同比下降12.32%；净利润0.62亿元，同比下降61.71%，主要由于21Q1\n公司鸡肉产品销量明显下滑，21Q1鸡肉产品销售量为5.58万吨，同比下降\n18.8%，销售收入为5.24亿元，同比下降17.5%。并且2021年升始，玉米、\n豆粘等饲料原料成本价格不断上涨，导致鸡养殖企业成本上抬，利润受到挤压。
+eval_4.png   2022年12月3O日，十三届全国人大常委会第三十八次会议闭幕会后，十三届全国人大常委会举行第三十一讲专题\n讲座。中国金融四十人论坛（CF4O）学术委员会主席、北京大学数字金融研究中心主任黄益平作了题为“数字经济的发\n展与治理”的讲座。
+eval_5.png   2022年12月30日，十三届全国人大常委会第三十八次会议闭幕会后，十三届全国人大常委会举行第三十一讲专题\n讲座。中国金融四十人论坛（CF4O）学术委员会主席、北京大学数字金融研究中心主任黄益平作了题为“数字经济的发\n展与治理”的讲座。
+eval_6.png   宋城演艺作为行业龙头，有稳固的竞争壁垒，短期看次新项目业绩\n释放驱动增长，中长期看探索城市演艺和模式4.0升级拓宽了行业\n天花板，中长期成长动能十足。预计公司2021-2023年营收分别为\n24.31/33.96/40.65亿元，归母净利润分别为10.90亿/16.72亿/20.14\n亿元，对应PE分别为40倍/26倍/22倍，维持“买入”评级。
+eval_7.png   证券分析师：鲁家瑞\n电话：021-61761016\nE-MAIL:lujiarui@guosen.com.cn\n证券投资咨询执业资格证书编码：S0980520110002\n联系人：李瑞楠\n电话：021-60893308\nE-MAIL:liruinan@guosen.com.cn
+eval_8.png   考虑公司的业务特点，我们采用绝对估值和相对估值两种方法来估算公司的合\n理价值区间。
+eval_9.png   黄益平在全国人大常委会专题讲座上的发言：数字经济的发展与治理
+eval_10.png   As we keep the layout information unchanged, this objective fa-\ncilitatesthemodeltolearnthecorrespondencebetweenlayout\ninformation and text andimagecontext.\nObjectiveII:MaskedImageModeling(MIM).Toencourage\nthemodeltointerpretvisualcontentfromcontextualtextand\nimage representations,we adapt the MIM pre-training objective in\nBEiT[3]toourmultimodalTransformermodel.TheMIMobjective\nisasymmetry totheMLMobjective,thatwerandomlymask a\npercentage of about 40% image tokens with the blockwise masking\nstrategy [3]. The MIM objective is driven by a cross-entropy loss\nto reconstruct the masked image tokens Xmunder the context of\ntheirsurroundingtextandimagetokens.
+eval_11.png   NORTHEASTSECURITIESCO..LTD
+eval_12.png   1.3.2等效
+eval_13.png   P
+eval_14.png   UDC
+eval_15.png   ☆
+eval_16.png   网址：www.jhpress.com
+eval_17.png   地址：北京市西城区木地北里甲11号国宏大厦C座3层\n邮政编码：100038电话：（010）63906433（发行部）\n三河富华印刷包装有限公司印刷
+eval_18.png   中华人民共和国住房和城乡建设部\n2018年3月30日
+eval_19.png   A泄压面积；
+eval_20.png   3除乙类第6项物品外的乙类仓库，与民用建筑的防火间距不宜小于25m，\n与重要公共建筑的防火间距不应小于50m，与铁路、道路等的防火间距不\n宜小于表3.5.1中甲类仓库与铁路、道路等的防火间距。
+eval_21.png   2粮食浅圆仓组内每个独立仓的储量不应大于10000t。
+eval_22.png   3.5.5库区围墙与库区内建筑的间距不宜小于5m，围墙两侧\n建筑的间距应满足相应建筑的防火间距要求。
+eval_23.png   3.6.3泄压设施宜采用轻质屋面板、轻质墙体和易于泄压的\n门窗等，应采用安全玻璃等在爆炸时不产生尖锐碎片的材\n料。
+eval_24.png   地下或半地下仓库（包括地下或半地下室），当有多个防火\n分区相邻布置并采用防火墙分隔时，每个防火分区可利用防火\n墙上通向相邻防火分区的申级防火门作为第二安全出口，但每\n个防火分区必须至少有1个直通室外的安全出口。
