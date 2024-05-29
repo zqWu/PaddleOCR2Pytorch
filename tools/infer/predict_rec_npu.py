@@ -106,6 +106,8 @@ class TextRecognizer(BaseOCRV20):
             self.net.cuda()
         if self.use_npu:
             self.net.npu()
+            import threading
+            print(f'rec模型->npu(), thread_id={threading.get_native_id()}')
 
     def resize_norm_img(self, img, max_wh_ratio):
         imgC, imgH, imgW = self.rec_image_shape

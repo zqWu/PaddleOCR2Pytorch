@@ -1,5 +1,6 @@
 import io
 import pathlib
+import threading
 from typing import List
 
 import cv2
@@ -33,6 +34,13 @@ async def _file_to_cv2(file: UploadFile):
     return cv2_img
 
 
+def _file_to_cv2_sync(file: UploadFile):
+    contents = file.file.read()
+    pil_image = Image.open(io.BytesIO(contents))
+    cv2_img = cv2.cvtColor(np.array(pil_image), cv2.COLOR_RGB2BGR)
+    return cv2_img
+
+
 @app.get('/ruok')
 async def ruok():
     logger.debug(f'imok')
@@ -44,8 +52,26 @@ async def img_ocr(file: UploadFile):
     support_ext = ['.jpg', '.jpeg', '.png']
     if pathlib.Path(file.filename).suffix not in support_ext:
         return {'error': f'仅仅支持{support_ext}'}
+    print(f'thread_id={threading.get_native_id()}')
 
     img = await _file_to_cv2(file)
+    return service_img_ocr(img)
+
+
+@app.post('/api/v1/img_ocr_sync', summary='上传图片文件, 进行ocr文本识别. 这个方法不能正常工作')
+def img_ocr_sync(file: UploadFile):
+    print("""
+    这个方法不能正常工作, 留在这里仅用于展示。
+    具体看报错日志。
+    模型的初始化 和 当前线程不是同一个，导致模型用起来有问题。
+    本质原因需要更深入的探索。期待有钻研精神的小伙伴能够帮我解决。by 吴中勤
+    """)
+    support_ext = ['.jpg', '.jpeg', '.png']
+    if pathlib.Path(file.filename).suffix not in support_ext:
+        return {'error': f'仅仅支持{support_ext}'}
+    print(f'thread_id={threading.get_native_id()}')
+
+    img = _file_to_cv2_sync(file)
     return service_img_ocr(img)
 
 

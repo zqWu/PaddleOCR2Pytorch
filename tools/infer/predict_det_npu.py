@@ -125,6 +125,8 @@ class TextDetector(BaseOCRV20):
         self.load_pytorch_weights(self.weights_path)
         self.net.eval()
         self.net.npu()
+        import threading
+        print(f'det模型->npu(), thread_id={threading.get_native_id()}')
 
     def order_points_clockwise(self, pts):
         """
